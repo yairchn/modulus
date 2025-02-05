@@ -1,0 +1,138 @@
+# SPDX-FileCopyrightText: Copyright (c) 2023 - 2024 NVIDIA CORPORATION & AFFILIATES.
+# SPDX-FileCopyrightText: All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+tcwv:
+  mean: 24.30038833618164
+  std: 16.78801155090332
+z1000:
+  mean: 937.43115234375
+  std: 906.9526977539062
+z850:
+  mean: 14253.53125
+  std: 1212.5018310546875
+z700:
+  mean: 29775.689453125
+  std: 1751.3800048828125
+z500:
+  mean: 55524.1328125
+  std: 2743.76171875
+z300:
+  mean: 91600.6171875
+  std: 4226.86083984375
+z250:
+  mean: 103607.1953125
+  std: 4616.79296875
+z50:
+  mean: 200956.703125
+  std: 3897.786376953125
+t2m:
+  mean: 287.4703369140625
+  std: 15.363832473754883
+t850:
+  mean: 281.179931640625
+  std: 12.326042175292969
+t500:
+  mean: 258.54669189453125
+  std: 10.946803092956543
+t250:
+  mean: 225.67677307128906
+  std: 7.319250583648682
+t50:
+  mean: 211.38198852539062
+  std: 7.483715057373047
+v10m:
+  mean: 0.18337926268577576
+  std: 4.5521135330200195
+v850:
+  mean: 0.08881819993257523
+  std: 5.8562912940979
+v500:
+  mean: -0.03322412446141243
+  std: 8.517282485961914
+v250:
+  mean: -0.047477949410676956
+  std: 13.122142791748047
+v50:
+  mean: -0.0021002735011279583
+  std: 5.68756628036499
+u10m:
+  mean: -0.37573397159576416
+  std: 5.4962005615234375
+u850:
+  mean: 1.0729646682739258
+  std: 8.193066596984863
+u500:
+  mean: 6.639811992645264
+  std: 12.047551155090332
+u250:
+  mean: 14.47092056274414
+  std: 18.63176918029785
+u50:
+  mean: 3.5428993701934814
+  std: 14.932473182678223
+q850:
+  mean: 0.006046622060239315
+  std: 0.004209691658616066
+q500:
+  mean: 0.0011114324443042278
+  std: 0.0012276014313101768
+sst:
+  mean: 291.42913818359375
+  std: 10.195956230163574
+z100:
+  mean: 159739.3125
+  std: 4143.0849609375
+t100:
+  mean: 204.8423614501953
+  std: 11.402822494506836
+u100:
+  mean: 10.117278099060059
+  std: 14.267192840576172
+v100:
+  mean: 0.015088649466633797
+  std: 7.112471580505371
+sp:
+  mean: 98563.296875
+  std: 6741.14697265625
+2d:
+  mean: 282.4517517089844
+  std: 15.097437858581543
+tau300-700:
+  mean: 61824.92578125
+  std: 2610.570068359375
+ws10m:
+  mean: 6.138580322265625
+  std: 3.6636860370635986
+ws850:
+  mean: 8.364208221435547
+  std: 5.711536407470703
+ws500:
+  mean: 12.898248672485352
+  std: 9.767855644226074
+ws250:
+  mean: 21.935182571411133
+  std: 15.735024452209473
+ws100:
+  mean: 15.643255233764648
+  std: 10.572993278503418
+ws50:
+  mean: 12.005701065063477
+  std: 11.123958587646484
+q2m:
+  mean: 0.013752182014286518
+  std: 0.008343114517629147
+
+

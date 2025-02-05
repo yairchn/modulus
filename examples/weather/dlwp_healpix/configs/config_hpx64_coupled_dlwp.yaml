@@ -14,13 +14,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_target_: modulus.metrics.climate.healpix_loss.WeightedMSE
+defaults:
+  - _self_
+  - data: era5_hpx64_8var-coupled_6h_24h
+  - model: coupled_hpx_rec_unet
+  - trainer: dlwp
 
-weights: 
-  - 1.69454188 
-  - 0.99324593 
-  - 0.28049704 
-  - 0.45038959 
-  - 0.1030195
-  - 0.25416836
-  - 3.58602883 
+experiment_name: hpx64_coupled_dlwp
+output_dir: /pscratch/sd/y/yacohen/nvdlesm/training/HPX64/rev_ls_oct22/hpx64_coupled_dlwp/
+# checkpoints names are in the from training-state-<name>.mdlus
+checkpoint_name: last
+load_weights_only: false
+seed: 0
+
+# Training specifications
+batch_size: 8
+learning_rate: 1e-3
+num_workers: 8
+
+# Distributed setup (multi GPU)
+port: 29450
+master_address: localhost
+
+hydra:
+  verbose: true
+  run:
+    dir: ${output_dir}

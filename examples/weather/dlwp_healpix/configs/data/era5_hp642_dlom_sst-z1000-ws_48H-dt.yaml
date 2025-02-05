@@ -14,9 +14,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-train_date_start: 1950-01-01
-train_date_end: 2012-12-31T18:00
-val_date_start: 2013-01-01
-val_date_end: 2014-12-31T18:00
-test_date_start: 2015-01-01
-test_date_end: 2021-12-31T18:00
+defaults:
+  - module: sst-z1000-ws
+  - scaling: hpx32
+  - splits: default
+
+src_directory: /global/cfs/cdirs/m4331/zespinos/
+dst_directory: /global/cfs/cdirs/m4331/zespinos/
+dataset_name: hpx64_1950-2023_daily_sst-ice_coupled_48H
+prefix: hpx64_1950-2023_daily_sst-ice_coupled_48H
+suffix: ''
+data_format: classic
+input_variables:
+  - sst
+output_variables: null
+constants:
+  land_sea_mask: lsm
+input_time_dim: 2
+output_time_dim: 2
+data_time_step: 3H
+time_step: 48H
+gap: 48H
+add_insolation: true
+nside: 32
+cube_dim: ${data.nside}
+prebuilt_dataset: true

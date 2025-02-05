@@ -20,9 +20,10 @@ defaults:
   - model: coupled_hpx_rec_unet
   - trainer: dlwp
 
-experiment_name: ${now:%Y-%m-%d}/${now:%H-%M-%S}
-output_dir: outputs/${experiment_name}
-# checkpoints names are in the form training-state-<name>.mdlus
+
+experiment_name: hpx32_coupled_dlwp
+output_dir: /pscratch/sd/y/yacohen/nvdlesm/hpx32_coupled_dlwp
+# checkpoints names are in the from training-state-<name>.mdlus
 checkpoint_name: last
 load_weights_only: false
 seed: 0

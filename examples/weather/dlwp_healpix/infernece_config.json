@@ -1,0 +1,36 @@
+{
+  "atmos_model_path": "/pscratch/sd/y/yacohen/nvdlesm/training/hpx32_coupled/8var_coupled_hpx32_24h_custom-weights_atmos",
+  "ocean_model_path": "/pscratch/sd/y/yacohen/nvdlesm/training/hpx32_coupled/hpx32_Coupled2varDLOM_48H_o96H_recunet",
+  "atmos_model_checkpoints": [
+    "tensorboard/checkpoints/training-state-epoch-0416-val_loss=1.1340E-03.mdlus",
+    "tensorboard/checkpoints/training-state-epoch-0443-val_loss=1.1345E-03.mdlus"
+  ],
+  "ocean_model_checkpoints": [
+      "tensorboard/checkpoints/training-state-epoch-0281-val_loss=7.8607E-04.mdlus",
+      "tensorboard/checkpoints/training-state-epoch-0299-val_loss=7.8657E-04.mdlus",
+      "tensorboard/checkpoints/training-state-epoch-0294-val_loss=7.8831E-04.mdlus",
+      "tensorboard/checkpoints/training-state-epoch-0289-val_loss=7.8856E-04.mdlus"
+
+    ],
+  "non_strict": false,
+  "lead_time": 192,
+  "forecast_init_start": "2018-01-02",
+  "forecast_init_end": "2018-02-02",
+  "freq": "biweekly",
+  "batch_size": null,
+  "output_directory": "/pscratch/sd/y/yacohen/nvdlesm/tests2/",
+  "atmos_output_filename": "forecast_atmos",
+  "ocean_output_filename": "forecast_ocean",
+  "atmos_subset_channels": ["t2m0", "t850", "z500"],
+  "ocean_subset_channels": ["sst"],
+  "encode_int": false,
+  "to_zarr": false,
+  "data_directory": "/global/cfs/projectdirs/m4331/datasets/era5_hpx/",
+  "data_prefix": "era5_hpx32_8var-coupled_6h_24h",
+  "data_suffix": "zarr",
+  "num_gpus": 1,
+  "noise_num": 3,
+  "noise_var": 0.01,
+  "perturbation_method": "bred_vector",
+  "bred_vector_steps": 10
+}

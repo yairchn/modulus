@@ -1,0 +1,71 @@
+# SPDX-FileCopyrightText: Copyright (c) 2023 - 2024 NVIDIA CORPORATION & AFFILIATES.
+# SPDX-FileCopyrightText: All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+tcwv:
+  mean: 23.09450340270996
+  std: 16.759191513061523
+z1000:
+  mean: 942.8433227539062
+  std: 910.048583984375
+z850:
+  mean: 14207.5556640625
+  std: 1198.6864013671875
+z500:
+  mean: 55317.82421875
+  std: 2773.682373046875
+z250:
+  mean: 103238.53125
+  std: 4631.001953125
+z50:
+  mean: 200273.453125
+  std: 2860.42919921875
+t2m:
+  mean: 286.2296142578125
+  std: 16.15393829345703
+t850:
+  mean: 280.1095275878906
+  std: 12.634992599487305
+t500:
+  mean: 257.611083984375
+  std: 11.357401847839355
+t250:
+  mean: 225.2694549560547
+  std: 6.784270763397217
+t50:
+  mean: 210.68801879882812
+  std: 7.173835754394531
+v10m:
+  mean: -0.20872563123703003
+  std: 4.479896545410156
+v850:
+  mean: -0.14290010929107666
+  std: 5.787739276885986
+v500:
+  mean: 0.017998185008764267
+  std: 8.552648544311523
+v250:
+  mean: 0.3284401595592499
+  std: 13.13424301147461
+v50:
+  mean: 0.00866570882499218
+  std: 5.905004024505615
+q850:
+  mean: 0.005709273740649223
+  std: 0.004249607678502798
+q500:
+  mean: 0.0010216913651674986
+  std: 0.0011666463688015938
+ 

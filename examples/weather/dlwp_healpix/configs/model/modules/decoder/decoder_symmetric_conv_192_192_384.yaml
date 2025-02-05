@@ -1,0 +1,16 @@
+defaults:
+  - /model/modules/blocks@conv_block: symmetric_conv_next_block
+  - /model/modules/blocks@up_sampling_block: transposed_conv_upsample
+  - /model/modules/blocks@recurrent_block: conv_gru_block
+  - /model/modules/blocks@output_layer: output_layer
+
+_target_: modulus.models.dlwp_healpix_layers.healpix_decoder.UNetDecoder
+_recursive_: false
+n_channels:
+  - 192
+  - 192
+  - 384
+dilations:
+  - 4
+  - 2
+  - 1

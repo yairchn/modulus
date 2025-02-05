@@ -14,11 +14,36 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-early_stopping:
-  _target_: pytorch_lightning.callbacks.EarlyStopping
-  monitor: 'val_loss'
-  min_delta: 0.0
-  patience: 50
-  verbose: false
-  mode: 'min'
-  strict: true
+defaults:
+  - module: atmos_ConstantCoupling 
+  - scaling: hpx64
+  - splits: default
+
+src_directory: /global/cfs/projectdirs/m4331/datasets/era5_hpx/
+dst_directory: /global/cfs/projectdirs/m4331/datasets/era5_hpx/
+dataset_name: era5_hpx64_1980
+prefix: era5_1deg_3h_HPX64_1979-2021_
+suffix: ''
+data_format: classic
+input_variables:
+  - z500
+  - tau300-700
+  - z1000
+  - t2m
+  - tcwv
+  - t850
+  - z250
+  - ws10m
+output_variables: null
+constants:
+  land_sea_mask: lsm
+  topography: z
+input_time_dim: 2
+output_time_dim: 4
+data_time_step: 3h
+time_step: 6h
+gap: 6h
+add_insolation: true
+nside: 64
+cube_dim: ${data.nside}
+prebuilt_dataset: true

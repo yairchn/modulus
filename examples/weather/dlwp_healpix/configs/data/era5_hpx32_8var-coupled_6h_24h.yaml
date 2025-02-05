@@ -17,10 +17,10 @@
 defaults:
   - module: atmos_ConstantCoupling 
   - scaling: hpx32 
-  - splits: default
+  - splits: default 
 
-src_directory: /datasets/healpix/HPX32
-dst_directory: /datasets/healpix/HPX32
+src_directory: /global/cfs/projectdirs/m4331/datasets/era5_hpx/
+dst_directory: /global/cfs/projectdirs/m4331/datasets/era5_hpx/
 dataset_name: era5_hpx32_8var-coupled_6h_24h
 prefix: era5_1deg_3h_HPX32_1979-2021_
 suffix: ''

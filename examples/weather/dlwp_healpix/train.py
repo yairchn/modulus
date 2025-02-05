@@ -145,6 +145,9 @@ def train(cfg):
                 if "epochs_since_improved" in checkpoint.keys()
                 else 0
             )
+
+            if cfg.trainer.lr_scheduler and cfg.trainer.lr_scheduler._target_ == 'torch.optim.lr_scheduler.CosineAnnealingLR':
+                cfg.trainer.lr_scheduler.last_epoch = epoch
         else:
             logger0.info(
                 f"Checkpoint not found, weights not loaded. Requested path: {checkpoint_path}"

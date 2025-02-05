@@ -1,0 +1,39 @@
+{
+  "atmos_model_path": "/pscratch/sd/y/yacohen/nvdlesm/training/HPX64/coupled/UW_configs_lr_5e_4",
+  "ocean_model_path": "/pscratch/sd/y/yacohen/nvdlesm/training/HPX64/coupled/dlom_uw_nacc_rev2_lr_fix_new_24",
+  "atmos_model_checkpoints": [
+      "tensorboard/checkpoints/seed3_training-state-epoch-0367-val_loss=9.7982E-04.mdlus",
+      "tensorboard/checkpoints/seed3_training-state-epoch-0372-val_loss=9.7739E-04.mdlus",
+      "tensorboard/checkpoints/seed3_training-state-epoch-0385-val_loss=9.7424E-04.mdlus",
+      "tensorboard/checkpoints/seed3_training-state-epoch-0397-val_loss=9.7572E-04.mdlus",
+      "tensorboard/checkpoints/seed3_training-state-epoch-0406-val_loss=9.7405E-04.mdlus",
+      "tensorboard/checkpoints/seed4_training-state-epoch-0330-val_loss=9.7377E-04.mdlus",
+      "tensorboard/checkpoints/seed4_training-state-epoch-0349-val_loss=9.7566E-04.mdlus",
+      "tensorboard/checkpoints/training-state-epoch-0358-val_loss=9.7532E-04.mdlus",
+      "tensorboard/checkpoints/training-state-epoch-0346-val_loss=9.7968E-04.mdlus"
+  ],
+  "ocean_model_checkpoints": [
+      "tensorboard/checkpoints/training-state-epoch-0146-val_loss=9.0144E-04.mdlus"
+  ],
+  "non_strict": false,
+  "lead_time": 1440,
+  "forecast_init_start": "2018-01-02",
+  "forecast_init_end": "2018-12-31",
+  "freq": "biweekly",
+  "batch_size": null,
+  "output_directory": "/pscratch/sd/y/yacohen/nvdlesm/inference/HPX64/atmos_98_good_ocean_bv2/",
+  "atmos_output_filename": "forecast_atmos",
+  "ocean_output_filename": "forecast_ocean",
+  "atmos_subset_channels": ["t2m0", "t850", "z500"],
+  "encode_int": false,
+  "to_zarr": false,
+  "data_directory": "/global/cfs/projectdirs/m4331/datasets/era5_hpx/",
+  "data_prefix": "era5_hpx64_1980",
+  "data_suffix": ".zarr",
+  "gpu": 0,
+  "noise_num": 3,
+  "noise_var": 0.01,
+  "perturbation_method": "bred_vector",
+  "bred_vector_steps": 10,
+  "keep_temp_files": false
+}

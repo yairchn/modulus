@@ -36,6 +36,7 @@ def write_checkpoint(
     epochs_since_improved: int,
     dst_path: str,
     keep_n_checkpoints: int = 5,
+    periodic_n_epochs: int = 25,
 ):
     """
     Writes a checkpoint including model, optimizer, and scheduler state dictionaries along with current epoch,
@@ -50,6 +51,7 @@ def write_checkpoint(
     :param epochs_since_improved: The number of epochs since the validation error improved
     :param dst_path: Path where the checkpoint is written to
     :param keep_n_checkpoints: Number of best checkpoints that will be saved (worse checkpoints are overwritten)
+    :param periodic_n_epochs: Saves a checkpoint every n epochs, regardless of loss
     """
     root_path = os.path.join(
         dst_path,
@@ -66,6 +68,8 @@ def write_checkpoint(
 
     model.save(ckpt_dst_path)
     model.save(os.path.join(root_path, "training-state-last.mdlus"))
+    if epoch % periodic_n_epochs == 0:
+        model.save(os.path.join(root_path, f"training-state-e{epoch}.mdlus"))
 
     opt_dst_path = os.path.join(
         root_path,
@@ -95,6 +99,19 @@ def write_checkpoint(
         },
         f=os.path.join(root_path, "optimizer-state-last.ckpt"),
     )
+
+    if epoch % periodic_n_epochs == 0:
+        th.save(
+            obj={
+                "optimizer_state_dict": optimizer.state_dict(),
+                "scheduler_state_dict": scheduler.state_dict(),
+                "epoch": epoch + 1,
+                "iteration": iteration,
+                "val_error": val_error,
+                "epochs_since_improved": epochs_since_improved,
+            },
+            f=os.path.join(root_path, f"optimizer-state-e{epoch}.ckpt"),
+        )
 
     # Only keep top n checkpoints
     ckpt_paths = np.array(glob.glob(root_path + "/training-state-epoch-*.mdlus"))

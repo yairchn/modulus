@@ -16,5 +16,8 @@
 
 _target_: modulus.metrics.climate.healpix_loss.OceanMSE
 
-lsm_file: /datasets/healpix/HPX32/hpx32_1950-2022_3h_sst_coupled.zarr
 
+lsm_file: ${data.src_directory}${data.dataset_name}.zarr
+
+selection_dict:
+  channel_c: land_sea_mask

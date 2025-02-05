@@ -1,0 +1,13 @@
+defaults:
+  - criterion: 21var_ws_uncertainty_weighted_mse
+  - optimizer: adam
+  - lr_scheduler: cosine
+
+_target_: trainer.Trainer
+_recursive_: true
+max_epochs: 600
+early_stopping_patience: null
+amp_mode: "fp16"
+graph_mode: "train_eval"
+output_dir: ${output_dir}
+periodic_n_epochs: 50

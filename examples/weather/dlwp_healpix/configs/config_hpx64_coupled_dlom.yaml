@@ -14,8 +14,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-_target_: torch.optim.lr_scheduler.ReduceLROnPlateau
-mode: 'min'
-factor: 0.3
-patience: 20
-min_lr: 1e-5
+defaults:
+  - _self_
+  - data: era5_hpx64_8var-coupled_6h_24h
+  - model: coupled_hpx_rec_unet_dlom
+  - trainer: dlom
+
+experiment_name: dlom_hpx64_8var-coupled
+output_dir: /pscratch/sd/y/yacohen/nvdlesm/dlom_hpx64_8var-coupled
+# checkpoints names are in the form training-state-<name>.mdlus
+checkpoint_name: last
+load_weights_only: false
+seed: 0
+
+# Training specifications
+batch_size: 16
+learning_rate: 1e-4
+num_workers: 8
+
+# Distributed setup (multi GPU)
+port: 29450
+master_address: localhost
+
+hydra:
+  verbose: true
+  run:
+    dir: ${output_dir}

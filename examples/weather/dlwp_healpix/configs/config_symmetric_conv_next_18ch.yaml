@@ -1,0 +1,26 @@
+defaults:
+  - _self_
+  - data: era5_hpx64_18var_6h_24h
+  - model: symmetric_conv_180-90-90
+  - trainer: 18var_uncertainty_weighted
+
+experiment_name: ${now:%Y-%m-%d}/${now:%H-%M-%S}
+output_dir: outputs/${experiment_name}
+# checkpoints names are in the form training-state-<name>.mdlus
+checkpoint_name: last
+load_weights_only: false
+seed: 0
+
+# Training specifications
+batch_size: 8
+learning_rate: 2e-4
+num_workers: 8
+
+# Distributed setup (multi GPU)
+port: 29450
+master_address: localhost
+
+hydra:
+  verbose: true
+  run:
+    dir: ${output_dir}

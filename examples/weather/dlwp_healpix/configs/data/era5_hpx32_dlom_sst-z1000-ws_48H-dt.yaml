@@ -19,10 +19,10 @@ defaults:
   - scaling: hpx32
   - splits: default
 
-src_directory: /datasets/healpix/HPX32
-dst_directory: /datasets/healpix/HPX32
-dataset_name: hpx32_1979-2022_3h_sst_coupled 
-prefix: hpx32_1979-2021_3h_
+src_directory: /global/cfs/cdirs/m4331/zespinos/
+dst_directory: /global/cfs/cdirs/m4331/zespinos/
+dataset_name: hpx64_1950-2023_daily_sst-ice_coupled_48H
+prefix: hpx64_1950-2023_daily_sst-ice_coupled_48H
 suffix: ''
 data_format: classic
 input_variables:

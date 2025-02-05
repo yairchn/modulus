@@ -53,6 +53,7 @@ class Trainer:
         device: torch.device = torch.device("cpu"),
         output_dir: str = "/outputs/",
         max_norm: float = None,
+        periodic_n_epochs: int = 25,
     ):
         """
         Constructor.
@@ -81,6 +82,8 @@ class Trainer:
             Where to store results
         max_norm: float, optional
             Maximum norm to use for training
+        periodic_n_epochs: int, optional
+            Save additional periodic checkpoint every n epochs, default 25
         """
         self.device = device
         self.amp_enable = False if (amp_mode == "none") else True
@@ -88,6 +91,7 @@ class Trainer:
         self.output_variables = data_module.output_variables
         self.early_stopping_patience = early_stopping_patience
         self.max_norm = max_norm
+        self.periodic_n_epochs = periodic_n_epochs
 
         self.model = model.to(device=self.device)
 
@@ -388,7 +392,10 @@ class Trainer:
                     self.writer.add_scalar(
                         tag="loss", scalar_value=train_loss, global_step=iteration
                     )
-                iteration += 1
+                # adjust iteration count based on batch size and number of tasks 
+                # so if job size changes interation counts are easily comparible
+                bsize = float(target.shape[0])
+                iteration += bsize * self.dist.world_size
                 training_step += 1
 
             torch.cuda.nvtx.range_pop()
@@ -527,6 +534,8 @@ class Trainer:
                         validation_error,
                         epochs_since_improved,
                         self.output_dir_tb,
+                        5, # keep 5 best checkpoints
+                        self.periodic_n_epochs,
                     ),
                 )
                 thread.start()

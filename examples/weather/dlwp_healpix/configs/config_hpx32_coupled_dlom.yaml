@@ -20,8 +20,8 @@ defaults:
   - model: coupled_hpx_rec_unet_dlom
   - trainer: dlom
 
-experiment_name: ${now:%Y-%m-%d}/${now:%H-%M-%S}
-output_dir: outputs/${experiment_name}
+periment_name: hpx32_coupled_dlom
+output_dir: /pscratch/sd/y/yacohen/nvdlesm/hpx32_coupled_dlom
 # checkpoints names are in the form training-state-<name>.mdlus
 checkpoint_name: last
 load_weights_only: false
